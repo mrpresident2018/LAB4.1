@@ -34,8 +34,8 @@ public class Deck
 	}
 	public void shuffle()
 	{
-		int posmax = 0;
-		int n = unDealt.size();
+		int max = 0;
+		int x = unDealt.size();
 		for (int k = 51; k >= 1; k--)
 		{
 			int r = (int)(Math.random()*50) + 1;
@@ -44,20 +44,21 @@ public class Deck
 			unDealt.remove(r + 1);
 			unDealt.remove(k + 1);
 		}
-		for (int i = 0; i < n; i++)
+		for (int a = 0; a < x; a++)
 		{	
-			if (unDealt.get(i).getValue() > unDealt.get(posmax).getValue() && unDealt.get(i).getSuit().trim().toLowerCase().equals("spade"));
+			if (unDealt.get(a).getValue() > unDealt.get(max).getValue() 
+					&& unDealt.get(a).getSuit().trim().toLowerCase().equals("spade"));
 			{
-				posmax = i;
+				max = a;
 			}
 		}
-		for (int k = 51; k >= 1; k--)
+		for (int b = 51; b >= 1; b--)
 		{
-			unDealt.add(posmax, unDealt.get(k));
-			unDealt.add(k + 1, unDealt.get(posmax + 1));
-			unDealt.remove(posmax + 1);
-			unDealt.remove(k + 1);
-			posmax = k;
+			unDealt.add(max, unDealt.get(b));
+			unDealt.add(b + 1, unDealt.get(max + 1));
+			unDealt.remove(max + 1);
+			unDealt.remove(b + 1);
+			max = b;
 		}
 	}
 }

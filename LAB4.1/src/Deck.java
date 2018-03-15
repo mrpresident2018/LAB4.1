@@ -1,8 +1,9 @@
+// Saurabh Bansal;	Mr. Levin;	AP COMPSCI JAVA;	Pd 2;	 3/15/18
 import java.util.ArrayList;
 public class Deck 
 {
-	private ArrayList<Card> unDealt = new ArrayList<Card>();
-	private ArrayList<Card> Dealt = new ArrayList<Card>();
+	private ArrayList<Cards> unDealt = new ArrayList<Cards>();
+	private ArrayList<Cards> Dealt = new ArrayList<Cards>();
 	
 	public Deck (String[] rank, String[] suit, int[] value)
 	{
@@ -10,7 +11,7 @@ public class Deck
 		{
 			for (int b = 0; b < suit.length; b++)
 			{
-				unDealt.add(new Card(rank[a], suit[b], value[a]));
+				unDealt.add(new Cards(rank[a], suit[b], value[a]));
 			}
 		}
 	}
@@ -28,7 +29,7 @@ public class Deck
 	}
 	public String deal()
 	{
-		Card c = unDealt.remove(0);
+		Cards c = unDealt.remove(0);
 		Dealt.add(c);
 		return c.toString();
 	}

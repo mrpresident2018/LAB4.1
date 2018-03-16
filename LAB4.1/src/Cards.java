@@ -36,6 +36,6 @@ public class Cards
 	
 	public String toString()
 	{
-		return ("This is the rank (" + this.rank + ")of " + this.suit + " has the value " + this.value);
+		return (this.rank + " of " + this.suit + " has the value " + this.value);
 	}
 }
